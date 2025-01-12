@@ -1,0 +1,85 @@
+consulta 1
+
+SELECT
+    {
+        [Measures].[Volumen Fluido],
+        [Measures].[Cantidad]
+    } ON COLUMNS,
+    NONEMPTY(
+        [Tratamiento].[Nombre Tratamiento].Children
+    ) ON ROWS
+FROM 
+    [UCIDW]
+
+consulta 2
+
+WITH 
+    MEMBER [Anyo].[Jerarquía].[Total] AS 
+        AGGREGATE(
+            [Anyo].[Jerarquía].[Anyo].Members
+        )
+SELECT
+    [Measures].[Cantidad] ON COLUMNS,
+    {
+        nonempty([Anyo].[Jerarquía].[Anyo].Members),
+        [Anyo].[Jerarquía].[Total]
+    } ON ROWS
+FROM
+    [UCIDW]
+
+
+consulta 3
+
+SELECT
+    {
+        [Measures].[Volumen Fluido],
+        [Measures].[Cantidad]
+    } ON COLUMNS,
+    NONEMPTY(
+        [Alergia].[Tipo Alergia].Children
+    ) ON ROWS
+FROM 
+    [UCIDW]
+
+consulta4
+
+SELECT
+    {
+        [Measures].[Volumen Fluido],
+        [Measures].[Cantidad]
+    } ON COLUMNS,
+    NONEMPTY(
+        [Ingreso UCI].[Fuente Admision].Children
+    ) ON ROWS
+FROM 
+    [UCIDW]
+
+
+consulta 5
+
+SELECT
+    nonempty([Ingreso UCI].[Tipo Unidad].Children) ON COLUMNS,
+    NONEMPTY(
+        [Medicamento].[Nombre Medicamento].Children,
+        [Measures].[Volumen Fluido]
+    ) ON ROWS
+FROM 
+    [UCIDW]
+WHERE 
+    [Measures].[Volumen Fluido]
+
+consulta 6
+
+SELECT 
+    {
+        [Measures].[Volumen Fluido],
+        [Measures].[Cantidad]
+    } ON COLUMNS,
+    NONEMPTY(
+        CROSSJOIN(
+            [Hospital].[Region].Members, 
+            [Tratamiento].[Tratamiento ID].Members
+        )
+    ) ON ROWS
+FROM 
+    [UCIDW]
