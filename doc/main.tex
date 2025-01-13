@@ -12,6 +12,8 @@
 \usepackage{float}  % Necesario para [H]
 \usepackage{listings}
 \usepackage{xcolor}
+\usepackage{subcaption}
+
 
 \definecolor{codegreen}{HTML}{5AB2FF}
 \definecolor{morado}{HTML}{AD88C6}
@@ -188,63 +190,84 @@ Si pulsamos la opción \textbf{Ampliación}, además de visualizar más diseños
 		\caption{Cambio de diseño del proyecto en PowerBI}
 		\label{fig:tutorial6}
 	\end{center}
-\end{figure}
+\end{figure}	
+	
+	
+\section{Gráficas del proyecto}
 
-
-
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-\section{Graficas}
-	------
-\subsection{Gráfica 1 titulos y tal ponerlos}
-
-\textbf{Ranking de Hospitales según Volumen de Fluido}
+Este proyecto desarrollado en Power BI ofrece una visión integral y detallada del funcionamiento de la Unidad de Cuidados Intensivos (UCI), utilizando datos extraídos del cubo de información. A través de gráficos interactivos y paneles dinámicos, se pueden visualizar y analizar aspectos clave como el consumo de medicamentos, el volumen de fluidos administrados, las fuentes de admisión, entre otros.
 \\
 
-explicar y cambiar titulos
-\\
+La herramienta permite explorar los datos en tiempo real, proporcionando una representación clara de la distribución de recursos en la UCI, y facilitando la comparación de diferentes parámetros como el tipo de tratamiento, la región, el año o el tipo de unidad. Los filtros interactivos permiten personalizar las visualizaciones para obtener insights más específicos y profundos sobre los diferentes aspectos del manejo de los pacientes en la UCI.
 
 \begin{figure}[H]
 	\begin{center} 
-		\includegraphics[width=0.35\linewidth]{images/tipo1.png}
-		\caption{Creación de un nuevo proyecto multidimensional en Visual Studio.}
+		\includegraphics[width=\textwidth]{images/vistageneral.png}
+		\caption{Vista general del proyecto PowerBI del Cubo UCI}
+		\label{fig:vistageneral}
+	\end{center}
+\end{figure}
+
+A continuación, se mostrarán de manera más detallada las gráficas que lo componen: 
+
+
+\subsection{Gráfica 1}
+
+\textbf{Gasto en Volumen VS Cantidad por tratamiento realizado}
+\\
+
+En esta gráfica se busca visualizar la relación entre el volumen de gasto (como medida del costo asociado) y la cantidad de insumos o recursos utilizados, segmentados por cada tipo de tratamiento realizado. Esta representación permite identificar patrones, tendencias o discrepancias en cómo se distribuyen los recursos y gastos en función de los tratamientos, facilitando el análisis de su eficiencia o impacto.
+\\
+
+Para comenzar, se debe seleccionar el tipo de gráfica que se desea utilizar. En este caso, el \textbf{gráfico de dispersión} es una opción adecuada para representar la comparativa entre \textbf{volumen} y \textbf{cantidad}.  
+
+
+\begin{figure}[H]
+	\begin{center} 
+		\includegraphics[width=0.3\linewidth]{images/tipo1.png}
+		\caption{Tipo de visualización para la Gráfica 1}
 		\label{fig:tipo1}
 	\end{center}
 \end{figure}
 
-\begin{figure}[H]
-	\begin{center} 
-		\includegraphics[width=0.4\linewidth]{images/seleccion1-1.png}
-		\caption{Creación de un nuevo proyecto multidimensional en Visual Studio.}
-		\label{fig:seleccion11}
-	\end{center}
-\end{figure}
+A continuación, se seleccionan los datos necesarios que serán representados en la gráfica. En este caso, de la tabla \textbf{Gasto de medicamento} seleccionamos los campos \textbf{Cantidad} y \textbf{Volumen}, y de la tabla \textbf{Tratamiento} elegimos el campo \textbf{Nombre de tratamiento}.  
+
 
 \begin{figure}[H]
-	\begin{center} 
-		\includegraphics[width=0.4\linewidth]{images/seleccion1-2.png}
-		\caption{Creación de un nuevo proyecto multidimensional en Visual Studio.}
+	\centering
+	\begin{subfigure}[b]{0.45\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{images/seleccion1-1.png}
+		
+		\label{fig:seleccion11}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}[b]{0.45\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{images/seleccion1-2.png}
+	
 		\label{fig:seleccion12}
-	\end{center}
+	\end{subfigure}
+	\caption{Selección de datos necesarios para la Gráfica 1}
+	\label{fig:seleccion1}
 \end{figure}
+
+Una vez seleccionados tanto los datos como el tipo de gráfico que se desea utilizar, aparece en pantalla la representación, como se muestra en la Figura \ref{fig:tabla1}. Esta gráfica permite analizar de manera visual como se distribuye la relación entre el volumen de gasto y la cantidad de medicamento utilizados en tratamientos. A partir de esta representación, es posible interpretar mejor y tomar de decisiones relacionadas con el uso de recursos.  
+
 
 \begin{figure}[H]
 	\begin{center} 
 		\includegraphics[width=0.5\linewidth]{images/tabla1.png}
-		\caption{Creación de un nuevo proyecto multidimensional en Visual Studio.}
+		\caption{Gráfica 1: Gasto en Volumen VS Cantidad por tratamiento realizado}
 		\label{fig:tabla1}
 	\end{center}
 \end{figure}
 
-\begin{lstlisting}[style=ddlstyle, label=lst:consulta1,caption=Consulta 1: Ranking de Hospitales según Volumen de Fluido]
+\subsubsection{Consulta 1}
+
+Con el propósito de garantizar la validez y coherencia de los resultados obtenidos, se ha diseñado la siguiente consulta \textbf{MDX}, que permite corroborar los datos generados y asegurar que cumplen con las expectativas del proyecto.  
+
+\begin{lstlisting}[style=ddlstyle, label=lst:consulta1,caption=Consulta 1: Gasto en Volumen VS Cantidad por tratamiento realizado]
 
 
 SELECT
@@ -253,55 +276,69 @@ SELECT
 		[Measures].[Cantidad]
 	} ON COLUMNS,
 	NONEMPTY(
-	[Tratamiento].[Nombre Tratamiento].Children
+		[Tratamiento].[Nombre Tratamiento].Children
 	) ON ROWS
 FROM 
 	[UCIDW]
 
 \end{lstlisting}
 
+
+
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.35\linewidth]{images/consulta1.png}
-	\caption{Resultados de la consulta 1: Ranking de Hospitales según Volumen de Fluido}
+	\caption{Resultados de la consulta 1: Gasto en Volumen VS Cantidad por tratamiento realizado}
 	\label{fig:consulta1}
 \end{figure}
+
+Como resultado de la consulta, se obtiene la Figura \ref{fig:consulta1}. Los datos presentados en la figura confirman que los resultados obtenidos son coherentes y respaldan la validez de la gráfica generada, mostrando que esta representa correctamente la relación entre las variables analizadas.  
 
 
 \subsection{Gráfica 2}
 
-\textbf{Ranking de Hospitales según Volumen de Fluido}
+\textbf{Cantidad de medicamento suministrado por año}
 \\
 
-explicar y cambiar titulos
+La gráfica busca presentar la cantidad de medicamento suministrada anualmente, proporcionando una visión clara de su distribución a lo largo del tiempo.
 \\
 
+Para este caso, la gráfica que mejor se ajusta a la distribución es un \textbf{gráfico de cascada
+}.
 \begin{figure}[H]
 	\begin{center} 
 		\includegraphics[width=0.35\linewidth]{images/tipo2.png}
-		\caption{Creación de un nuevo proyecto multidimensional en Visual Studio.}
+		\caption{Tipo de visualización para la Gráfica 2}
 		\label{fig:tipo2}
 	\end{center}
 \end{figure}
 
+En este caso para coger los datos se selecciona de \textbf{Gasto de medicamento}  el valor \textbf{Cantidad}, y de la tabla \textbf{Anyo} elegimos el campo dentro de la jerarquía \textbf{Anyo}.
+ 
 \begin{figure}[H]
 	\begin{center} 
-		\includegraphics[width=0.4\linewidth]{images/seleccion2.png}
-		\caption{Creación de un nuevo proyecto multidimensional en Visual Studio.}
+		\includegraphics[width=0.3\linewidth]{images/seleccion2.png}
+		\caption{Selección de datos necesarios para la Gráfica 2}
 		\label{fig:seleccion2}
 	\end{center}
 \end{figure}
 
 
+Como resultado de la gráfica, se observa en la Figura \ref{fig:tabla2} claramente las tendencias en el consumo del medicamento a lo largo del tiempo, donde se observa un aumento significativo de 2014 a 2015. Esta información es crucial para la planificación y toma de decisiones en el ámbito de la salud, ya que permite ajustar de manera efectiva los recursos y las estrategias que se van a seguir.
+
 \begin{figure}[H]
 	\begin{center} 
 		\includegraphics[width=0.7\linewidth]{images/tabla2.png}
-		\caption{Creación de un nuevo proyecto multidimensional en Visual Studio.}
+		\caption{Cantidad de medicamento suministrado por año}
 		\label{fig:tabla2}
 	\end{center}
 \end{figure}
 
-\begin{lstlisting}[style=ddlstyle, label=lst:consulta1,caption=Consulta 1: Ranking de Hospitales según Volumen de Fluido]
+\subsubsection{Consulta 2}
+
+Para asegurar la fiabilidad y coherencia de los resultados obtenidos, se ha creado la siguiente consulta \textbf{MDX}, que permite validar los datos generados y confirmar que cumplen con los objetivos del proyecto. 
+
+\begin{lstlisting}[style=ddlstyle, label=lst:consulta2,caption=Consulta 2: Cantidad de medicamento suministrado por año]
 	
 	
 
@@ -323,45 +360,59 @@ FROM
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.35\linewidth]{images/consulta1.png}
-	\caption{Resultados de la consulta 1: Ranking de Hospitales según Volumen de Fluido}
+	\includegraphics[width=0.35\linewidth]{images/consulta2.png}
+	\caption{Resultados de la consulta 2: Cantidad de medicamento suministrado por año}
 	\label{fig:consulta2}
 \end{figure}
 
+El resultado de la consulta muestra las cantidades correspondientes a cada año, de la misma manera que se mostraba en el gráfico de cascada.
+
 \subsection{Gráfica 3}
 
-\textbf{Ranking de Hospitales según Volumen de Fluido}
+\textbf{Gastos de Cantidad y Volumen de fluido de medicamentos para cada tipo de alergia}
 \\
 
-explicar y cambiar titulos
+Para la tercera gráfica, se busca representar las cantidades utilizadas de medicamento para dos tipos de alergias: \textbf{Drugs} y \textbf{Non Drug}, tanto en términos de volumen de fluido como de cantidad. El objetivo es visualizar las diferencias en el consumo de medicamentos entre ambos tipos de alergias, permitiendo un análisis detallado de los recursos utilizados en cada categoría.
 \\
+
+Se comienza seleccionando como forma de visualización un gráfico clásico de columnas, que es la manera mas sencilla de visualizar este tipo de datos.
 
 \begin{figure}[H]
 	\begin{center} 
 		\includegraphics[width=0.35\linewidth]{images/tipo3.png}
-		\caption{Creación de un nuevo proyecto multidimensional en Visual Studio.}
+		\caption{Tipo de visualización para la Gráfica 3}
 		\label{fig:tipo3}
 	\end{center}
 \end{figure}
 
+En este caso los datos necesarios serán los mencionados, de \textbf{Gasto de medicamento}  el valor \textbf{Cantidad} y  \textbf{Volumen de fluido} , y de la tabla \textbf{Alergia} elegimos el campo dentro de la jerarquía \textbf{Tipo Alergia}.
+
 \begin{figure}[H]
 	\begin{center} 
 		\includegraphics[width=0.35\linewidth]{images/seleccion3.png}
-		\caption{Creación de un nuevo proyecto multidimensional en Visual Studio.}
+		\caption{Selección de datos necesarios para la Gráfica 3}
 		\label{fig:seleccion3}
 	\end{center}
 \end{figure}
 
+Como se muestra en la figura \ref{fig:tabla3}, tras visualizar los datos seleccionados, los resultados obtenidos muestran un elevado gasto de medicamentos para las alergias del tipo \textbf{Non Drug} en comparación con \textbf{Drug}; mientras que para el volumen de fluido suministrado es al revés.
+\\
+
+Esta información es útil para identificar patrones de consumo y optimizar la asignación de medicamentos, garantizando una distribución más eficiente según las necesidades específicas de tratamiento.
 
 \begin{figure}[H]
 	\begin{center} 
 		\includegraphics[width=0.7\linewidth]{images/tabla3.png}
-		\caption{Creación de un nuevo proyecto multidimensional en Visual Studio.}
+		\caption{Gráfica 3: Gastos de Cantidad y Volumen de fluido de medicamentos para cada tipo de alergia}
 		\label{fig:tabla3}
 	\end{center}
 \end{figure}
 
-\begin{lstlisting}[style=ddlstyle, label=lst:consulta1,caption=Consulta 1: Ranking de Hospitales según Volumen de Fluido]
+\subsubsection{Consulta 3}
+
+Una vez más, se crea la siguiente consulta \textbf{MDX}, para validar y contrastar los datos generados y confirmar que cumplen con los objetivos. 
+
+\begin{lstlisting}[style=ddlstyle, label=lst:consulta3,caption=Consulta 3: Gastos de Cantidad y Volumen de fluido de medicamentos para cada tipo de alergia]
 	
 	
 SELECT
@@ -379,45 +430,59 @@ FROM
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.35\linewidth]{images/consulta1.png}
-	\caption{Resultados de la consulta 1: Ranking de Hospitales según Volumen de Fluido}
+	\includegraphics[width=0.35\linewidth]{images/consulta3.png}
+	\caption{Resultados de la consulta 3: Gastos de Cantidad y Volumen de fluido de medicamentos para cada tipo de alergia}
 	\label{fig:consulta3}
 \end{figure}
 
+Como se puede apreciar en la figura \ref*{fig:consulta3}, los resultados coinciden con los obtenidos en la Gráfica \ref{fig:tabla3}, lo que valida y respalda la consistencia de los datos presentados.
+
 \subsection{Gráfica 4}
 
-\textbf{Ranking de Hospitales según Volumen de Fluido}
+\textbf{Cantidad y Volumen de fluido sumninistrado por cada fuente de admisión en la UCI}
 \\
 
-explicar y cambiar titulos
+Esta gráfica busca representar es la distribución del volumen y la cantidad de fluido administrado a los pacientes en la Unidad de Cuidados Intensivos (UCI), según la fuente de admisión. Esta visualización tiene como objetivo identificar la relación entre las distintas fuentes de admisión (como \textit{Emergency Department}, \textit{Operating Room}, o \textit{PACU}) y la cantidad y volumen de fluido suministrados, permitiendo un análisis detallado del manejo de recursos y el tratamiento proporcionado en la UCI.
 \\
+
+El tipo de representación seleccionado para esta consulta es un gráfico de anillos, el cual facilita la visualización de la distribución de los datos correspondientes a cada tipo de UCI, permitiendo una comparación clara y precisa de los distintos volúmenes y cantidades de fluido suministrado según las fuentes de admisión.
 
 \begin{figure}[H]
 	\begin{center} 
 		\includegraphics[width=0.35\linewidth]{images/tipo4.png}
-		\caption{Creación de un nuevo proyecto multidimensional en Visual Studio.}
+		\caption{Tipo de visualización para la Gráfica 4}
 		\label{fig:tipo4}
 	\end{center}
 \end{figure}
 
+Se seleccionaron los valores \textbf{Cantidad} y  \textbf{Volumen de fluido}  de \textbf{Gasto de medicamento}, y de la tabla \textbf{Ingreso UCI} los datos de \textbf{Fuente de admisión}.
+
 \begin{figure}[H]
 	\begin{center} 
-		\includegraphics[width=0.35\linewidth]{images/seleccion4.png}
-		\caption{Creación de un nuevo proyecto multidimensional en Visual Studio.}
+		\includegraphics[width=0.3\linewidth]{images/seleccion4.png}
+		\caption{Selección de datos necesarios para la Gráfica 4}
 		\label{fig:seleccion4}
 	\end{center}
 \end{figure}
 
 
+
 \begin{figure}[H]
 	\begin{center} 
 		\includegraphics[width=0.7\linewidth]{images/tabla4.png}
-		\caption{Creación de un nuevo proyecto multidimensional en Visual Studio.}
+		\caption{Gráfica 4: Cantidad y Volumen de fluido sumninistrado por cada fuente de admisión en la UCI}
 		\label{fig:tabla4}
 	\end{center}
 \end{figure}
 
-\begin{lstlisting}[style=ddlstyle, label=lst:consulta1,caption=Consulta 1: Ranking de Hospitales según Volumen de Fluido]
+Una vez insertados los datos, se obtiene la gráfica de anillos de la figura \ref{fig:tabla4}, donde se observa que el mayor porcentaje del gasto de medicamento se distribuye entre las categorías \textit{Unknown} y el tipo \textit{Floor}, lo que indica que estas dos fuentes de admisión representan las porciones más significativas del consumo de medicamentos. Esta información permite identificar áreas donde se concentra la mayor parte del suministro, facilitando una mejor planificación y asignación de recursos.
+
+
+\subsubsection{Consulta 4}
+
+Para comprobar si la gráfica es válida, se crea la siguiente consulta \textbf{MDX}.
+
+\begin{lstlisting}[style=ddlstyle, label=lst:consulta4,caption=Consulta 4: Cantidad y Volumen de fluido sumninistrado por cada fuente de admisión en la UCI]
 	
 	
 SELECT
@@ -433,54 +498,74 @@ FROM
 	
 \end{lstlisting}
 
+
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.45\linewidth]{images/consulta4.png}
-	\caption{Resultados de la consulta 1: Ranking de Hospitales según Volumen de Fluido}
+	\caption{Resultados de la consulta 4: Cantidad y Volumen de fluido sumninistrado por cada fuente de admisión en la UCI}
 	\label{fig:consulta4}
 \end{figure}
 
+Lo obtenido en la tabla \ref{fig:consulta4} refleja el resultado de la gráfica \ref{fig:tipo4}, lo que comprueba nuevamente que funciona correctamente.
+
 \subsection{Gráfica 5}
 
-\textbf{Ranking de Hospitales según Volumen de Fluido}
+\textbf{Volumen de cada medicamento suministrado por Tipo de unidad en la UCI}
 \\
 
-explicar y cambiar titulos
+Con el objetivo de visualizar como se gasta cada medicamento según el tipo de unidad en la UCI, esta gráfica ha sido diseñada para mostrar cómo se distribuye el volumen total de medicamentos en las diferentes áreas de la unidad de cuidados intensivos. Al segmentar los datos por tipo de unidad, se facilita la identificación de las áreas con mayor consumo de medicamentos y además cuales son estos los más utilizados, y permite comparar el uso de recursos en las distintas secciones de la UCI. Esta representación es útil para evaluar la eficiencia en la distribución de los medicamentos y optimizar la gestión de los suministros en función de las necesidades específicas de cada unidad.
 \\
+
+Lo más completo para visualizar la distribución de los medicamentos en cada tipo de UCI es un gráfico de columnas ampliada, que muestra los medicamentos en proporción de cuanto se usen.
 
 \begin{figure}[H]
 	\begin{center} 
 		\includegraphics[width=0.35\linewidth]{images/tipo5.png}
-		\caption{Creación de un nuevo proyecto multidimensional en Visual Studio.}
+		\caption{Tipo de visualización para la Gráfica 5}
 		\label{fig:tipo5}
 	\end{center}
 \end{figure}
 
-\begin{figure}[H]
-	\begin{center} 
-		\includegraphics[width=0.4\linewidth]{images/seleccion5-1.png}
-		\caption{Creación de un nuevo proyecto multidimensional en Visual Studio.}
-		\label{fig:seleccion51}
-	\end{center}
-\end{figure}
+Para esta gráfica será necesario seleccionar los datos de \textbf{Volumen de fluido} dentro de \textbf{Gasto de medicamento}; el \textbf{Tipo Unidad} de \textbf{Ingreso UCI}  y de la tabla \textbf{Medicamento} el campo \textbf{Nombre Medicamento}.
 
 \begin{figure}[H]
-	\begin{center} 
-		\includegraphics[width=0.35\linewidth]{images/seleccion5-2.png}
-		\caption{Creación de un nuevo proyecto multidimensional en Visual Studio.}
+	\centering
+	\begin{subfigure}[b]{0.45\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{images/seleccion5-1.png}
+		
+		\label{fig:seleccion51}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}[b]{0.35\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{images/seleccion5-2.png}
+		
 		\label{fig:seleccion52}
-	\end{center}
+	\end{subfigure}
+	\caption{Selección de datos necesarios para la Gráfica 5}
+	\label{fig:seleccion5}
 \end{figure}
+
+El resultado es el mostrado en la figura \ref{fig:tabla5}, donde se observan para cada tipo de UCI (columnas) la proporción de medicamentos utilizados. Por ejemplo para \textit{Neuro UCI} vemos que se usan mayoritariamente dos medicamentos mientras que en \textit{Med-Surg ICU} es más variado.
+\\
+
+Esta gráfica facilita la identificación rápida de los medicamentos más necesarios en cada unidad, lo que permite conocer de manera eficiente como debería ser su distribución en cada centro.
 
 \begin{figure}[H]
 	\begin{center} 
 		\includegraphics[width=0.7\linewidth]{images/tabla5.png}
-		\caption{Creación de un nuevo proyecto multidimensional en Visual Studio.}
+		\caption{Gráfica 5: Volumen de cada medicamento suministrado por Tipo de unidad en la UCI}
 		\label{fig:tabla5}
 	\end{center}
 \end{figure}
 
-\begin{lstlisting}[style=ddlstyle, label=lst:consulta1,caption=Consulta 1: Ranking de Hospitales según Volumen de Fluido]
+\subsubsection{Consulta 5}
+
+De manera similar a las anteriores, se crea la siguiente consulta \textbf{MDX}, para  contrastar los datos generados y confirmar que cumplen con los objetivos del proyecto. 
+
+
+\begin{lstlisting}[style=ddlstyle, label=lst:consulta5,caption=Consulta 5: Volumen de cada medicamento suministrado por Tipo de unidad en la UCI]
 	
 	
 SELECT
@@ -499,51 +584,67 @@ WHERE
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.65\linewidth]{images/consulta5.png}
-	\caption{Resultados de la consulta 1: Ranking de Hospitales según Volumen de Fluido}
+	\caption{Resultados de la consulta 5: Volumen de cada medicamento suministrado por Tipo de unidad en la UCI}
 	\label{fig:consulta5}
 \end{figure}
 
+La tabla de la figura \ref{fig:consulta5} muestra el volumen de cada medicamento en cada tipo de uci como se muestra en la imagen \ref{fig:tabla5}, sin embargo de esta forma es menos visual observar como se distribuyen.
+
 \subsection{Gráfica 6}
 
-\textbf{Ranking de Hospitales según Volumen de Fluido}
+\textbf{Volumen de fluido y Cantidad utilizados por tratamiento organizado en regiones}
 \\
 
-explicar y cambiar titulos
+Finalmente, se busca representar el consumo de cada tratamiento, organizado por regiones, en función del volumen de fluido y la cantidad de medicamento utilizado. Esta gráfica tiene como objetivo proporcionar una visión clara de cómo se distribuyen los recursos según el tipo de tratamiento y la región correspondiente, permitiendo comparar el uso de medicamentos y fluidos en diferentes áreas. De este modo, se puede evaluar la eficiencia en la asignación de estos recursos, identificar patrones en el consumo y tomar decisiones informadas para optimizar la gestión y distribución de los tratamientos en función de las necesidades regionales.
 \\
+
+La gráfica más eficaz para este tipo de consulta es una tabla que organice los tratamientos en las diferentes regiones.
 
 \begin{figure}[H]
 	\begin{center} 
 		\includegraphics[width=0.35\linewidth]{images/tipo6.png}
-		\caption{Creación de un nuevo proyecto multidimensional en Visual Studio.}
+		\caption{Tipo de visualización para la Gráfica 6}
 		\label{fig:tipo6}
 	\end{center}
 \end{figure}
 
+Se seleccionan los datos de \textbf{Volumen de fluido} y \textbf{Cantidad} dentro de \textbf{Gasto de medicamento}; la \textbf{Region} de \textbf{Hospital}  y de la tabla \textbf{Tratamiento} el campo \textbf{Tratamiento ID}.
+
 \begin{figure}[H]
-	\begin{center} 
-		\includegraphics[width=0.4\linewidth]{images/seleccion6-1.png}
-		\caption{Creación de un nuevo proyecto multidimensional en Visual Studio.}
+	\centering
+	\begin{subfigure}[b]{0.45\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{images/seleccion6-1.png}
+		
 		\label{fig:seleccion61}
-	\end{center}
-\end{figure}
-
-\begin{figure}[H]
-	\begin{center} 
-		\includegraphics[width=0.35\linewidth]{images/seleccion6-2.png}
-		\caption{Creación de un nuevo proyecto multidimensional en Visual Studio.}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}[b]{0.3\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{images/seleccion6-2.png}
+		
 		\label{fig:seleccion62}
-	\end{center}
+	\end{subfigure}
+	\caption{Selección de datos necesarios para la Gráfica 6}
+	\label{fig:seleccion6}
 \end{figure}
+
+La representación tras seleccionar los datos es una tabla ordenada por regiones que muestra para cada tratamiento las cantidades y volúmenes suministrados (Figura \ref{fig:tabla6}). Gracias a esta tabla, podemos focalizar un mayor suministro de recursos en aquellas regiones que hacen mayor uso de los mismos.
 
 \begin{figure}[H]
 	\begin{center} 
-		\includegraphics[width=0.5\linewidth]{images/tabla6.png}
-		\caption{Creación de un nuevo proyecto multidimensional en Visual Studio.}
+		\includegraphics[width=0.45\linewidth]{images/tabla6.png}
+		\caption{Gráfica 6: Volumen de fluido y Cantidad utilizados por tratamiento organizado en regiones}
 		\label{fig:tabla6}
 	\end{center}
 \end{figure}
 
-\begin{lstlisting}[style=ddlstyle, label=lst:consulta1,caption=Consulta 1: Ranking de Hospitales según Volumen de Fluido]
+\subsubsection{Consulta 6}
+
+Una vez más, se crea la siguiente consulta \textbf{MDX}, para contrastar los datos generados. 
+
+
+\begin{lstlisting}[style=ddlstyle, label=lst:consulta6,caption=Consulta 6: Volumen de fluido y Cantidad utilizados por tratamiento organizado en regiones]
 	
 	
 SELECT 
@@ -562,26 +663,69 @@ FROM
 	
 \end{lstlisting}
 
+
+
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.4\linewidth]{images/consulta6.png}
-	\caption{Resultados de la consulta 1: Ranking de Hospitales según Volumen de Fluido}
+	\caption{Resultados de la consulta 6: Volumen de fluido y Cantidad utilizados por tratamiento organizado en regiones}
 	\label{fig:consulta6}
 \end{figure}
 
-\section{Tutorial ejecutar consultas}
+La tabla obtenida en la figura \ref{fig:consulta6} es prácticamente igual a la generada en PowerBI (Figura \ref{fig:tabla6}), por lo que estaría bien implementada.
+
+\section{Ajustes opcionales}
+
+Para mejorar el aspecto general del proyecto, se pueden implementar una serie de ajustes y añadir funcionalidades adicionales que no solo optimicen los resultados, sino que también contribuyan a una experiencia de usuario más fluida y atractiva. 
+\\
+
+Por ejemplo, la modificación de los títulos de las gráficas para que sean más descriptivos y específicos puede mejorar significativamente la comprensión de los datos que se presentan. Para ello, en el panel de \textbf{Visualizaciones} accedemos a la sección marcada en la figura \ref{fig:titulo}, donde la aplicación permite la modificación del \textbf{Titulo} entre otros ajustes.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.4\linewidth]{images/titulo.png}
+	\caption{Modificar el titulo de una gráfica en PowerBI}
+	\label{fig:titulo}
+\end{figure}
+
+Además, para hacer el proyecto más interactivo y accesible, se ha añadido una columna con filtros disponibles para las secciones de \textbf{año}, \textbf{región}, \textbf{tratamiento}, \textbf{medicamento}, \textbf{tipo de unidad} y \textbf{tipo de alergia} como se muestra ne la Figura \ref{fig:filtros}. Esta funcionalidad permite a los usuarios seleccionar y visualizar los datos según sus preferencias, facilitando un análisis más específico y detallado de la información. Los filtros ofrecen una manera eficiente de segmentar los datos, mejorando la usabilidad del proyecto y proporcionando una experiencia más personalizada.
+
+
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.3\linewidth]{images/filtros.png}
+	\caption{Filtros del proyecto}
+	\label{fig:filtros}
+\end{figure}
+
+Para ello únicamnete debemos seleccionar el tipo de visualización \textbf{Segmentación de datos} y elegir los datos que queramos filtra de los disponibles.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.3\linewidth]{images/tipof.png}
+	\caption{Tipo de visualización para los filtros}
+	\label{fig:tipof}
+\end{figure}
+
+Y si se accede a la pestaña mostrada en la figura \ref{fig:filtro}, se podrá elegir el tipo de filtro que se quiere utilizar.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.35\linewidth]{images/filtro.png}
+	\caption{Modificación de los filtros}
+	\label{fig:filtro}
+\end{figure}
 
  \section{Conclusión}
 	 \label{sec:conclusion}
 	 
-	 La creación del cubo multidimensional de gasto de medicamento ha representado un paso clave en nuestro trabajo, construyendo sobre la base sólida establecida por el proceso ETL previo. Este proyecto no solo ha permitido estructurar los datos de manera más intuitiva y accesible, sino que también ha facilitado un análisis más profundo y específico del gasto farmacéutico.
-	 
-	 En conclusión, el cubo multidimensional desarrollado no solo ofrece una herramienta potente para el análisis del gasto de medicamentos, sino que también representa un avance importante en la construcción de infraestructuras de datos hospitalarios más robustas y orientadas al análisis avanzado.
+	En conclusión, el desarrollo de este informe utilizando Power BI ha permitido crear una herramienta interactiva y efectiva para el análisis de los datos del proyecto Cubo UCI. A través de la implementación de gráficos, tablas y otros elementos visuales, se ha facilitado la comprensión de información clave, permitiendo al usuario final tomar decisiones informadas de manera eficiente. La validación de los datos mediante consultas MDX ha asegurado la precisión y coherencia entre los resultados visualizados y los datos extraídos del cubo multidimensional, garantizando la fiabilidad del informe. Asimismo, el diseño visual claro y profesional cumple con los estándares de visualización de datos, mejorando la experiencia del usuario. Finalmente, el proceso de desarrollo ha sido documentado detalladamente, asegurando la trazabilidad de las decisiones tomadas y el código utilizado para futuras referencias o mejoras.
 	 
 	\newpage
 	\section{Acceso al Repositorio}
 	
-	Toda la información adicional, incluyendo el código fuente y la documentación completa de este proyecto, está disponible en el repositorio de GitHub \cite{silva2024github}.
+	Toda la información adicional, incluyendo el proyecto y la documentación completa de este proyecto, está disponible en el repositorio de GitHub \cite{cuevas2025powerbi}.
 	
 	% Incluir la bibliografía
 	\bibliographystyle{plain}  % Estilo de la bibliografía (por ejemplo, plain, alpha, ieee, etc.)
