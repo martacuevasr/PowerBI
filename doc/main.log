@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2024.9.27)  13 JAN 2025 01:48
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2024.9.27)  13 JAN 2025 12:54
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -255,267 +255,266 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 \openout3 = `main.toc'.
 
  [1]
+Underfull \hbox (badness 10000) in paragraph at lines 90--92
 
-! LaTeX Error: Something's wrong--perhaps a missing \item.
+ []
 
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.101 \end{itemize}
-                   
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
+
+Underfull \hbox (badness 10000) in paragraph at lines 104--106
+
+ []
 
 <images/tutorial1.png, id=17, 1927.2pt x 1084.05pt>
 File: images/tutorial1.png Graphic file (type png)
 <use images/tutorial1.png>
-Package pdftex.def Info: images/tutorial1.png  used on input line 120.
-(pdftex.def)             Requested size: 469.75502pt x 264.22992pt.
-<images/tutorial2.png, id=19, 1927.2pt x 1084.05pt>
+Package pdftex.def Info: images/tutorial1.png  used on input line 124.
+(pdftex.def)             Requested size: 422.77664pt x 237.797pt.
+[2]
+<images/tutorial2.png, id=22, 1927.2pt x 1084.05pt>
 File: images/tutorial2.png Graphic file (type png)
 <use images/tutorial2.png>
-Package pdftex.def Info: images/tutorial2.png  used on input line 130.
-(pdftex.def)             Requested size: 469.75502pt x 264.22992pt.
-[2 <./images/tutorial1.png>]
-<images/tutorial3.png, id=25, 1927.2pt x 1084.05pt>
+Package pdftex.def Info: images/tutorial2.png  used on input line 135.
+(pdftex.def)             Requested size: 422.77664pt x 237.797pt.
+ [3 <./images/tutorial1.png> <./images/tutorial2.png>]
+<images/tutorial3.png, id=28, 1927.2pt x 1084.05pt>
 File: images/tutorial3.png Graphic file (type png)
 <use images/tutorial3.png>
-Package pdftex.def Info: images/tutorial3.png  used on input line 138.
-(pdftex.def)             Requested size: 469.75502pt x 264.22992pt.
-<images/tutorial4.png, id=26, 1927.2pt x 1084.05pt>
+Package pdftex.def Info: images/tutorial3.png  used on input line 146.
+(pdftex.def)             Requested size: 422.77664pt x 237.797pt.
+<images/tutorial4.png, id=29, 1927.2pt x 1084.05pt>
 File: images/tutorial4.png Graphic file (type png)
 <use images/tutorial4.png>
-Package pdftex.def Info: images/tutorial4.png  used on input line 146.
-(pdftex.def)             Requested size: 469.75502pt x 264.22992pt.
- [3 <./images/tutorial2.png> <./images/tutorial3.png>]
-<images/tutorial5.png, id=32, 1927.2pt x 1084.05pt>
+Package pdftex.def Info: images/tutorial4.png  used on input line 155.
+(pdftex.def)             Requested size: 422.77664pt x 237.797pt.
+ [4 <./images/tutorial3.png>]
+<images/tutorial5.png, id=34, 1927.2pt x 1084.05pt>
 File: images/tutorial5.png Graphic file (type png)
 <use images/tutorial5.png>
-Package pdftex.def Info: images/tutorial5.png  used on input line 154.
-(pdftex.def)             Requested size: 469.75502pt x 264.22992pt.
-<images/tutorial6.png, id=33, 1927.2pt x 1084.05pt>
+Package pdftex.def Info: images/tutorial5.png  used on input line 166.
+(pdftex.def)             Requested size: 422.77664pt x 237.797pt.
+ [5 <./images/tutorial4.png> <./images/tutorial5.png>]
+<images/tutorial6.png, id=40, 1927.2pt x 1084.05pt>
 File: images/tutorial6.png Graphic file (type png)
 <use images/tutorial6.png>
-Package pdftex.def Info: images/tutorial6.png  used on input line 162.
-(pdftex.def)             Requested size: 469.75502pt x 264.22992pt.
- [4 <./images/tutorial4.png> <./images/tutorial5.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 184--186
+Package pdftex.def Info: images/tutorial6.png  used on input line 187.
+(pdftex.def)             Requested size: 422.77664pt x 237.797pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 209--211
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 187--189
+Underfull \hbox (badness 10000) in paragraph at lines 212--214
 
  []
 
-<images/tipo1.png, id=39, 211.54031pt x 363.60844pt>
+<images/tipo1.png, id=41, 211.54031pt x 363.60844pt>
 File: images/tipo1.png Graphic file (type png)
 <use images/tipo1.png>
-Package pdftex.def Info: images/tipo1.png  used on input line 192.
+Package pdftex.def Info: images/tipo1.png  used on input line 217.
 (pdftex.def)             Requested size: 164.41711pt x 282.6203pt.
-[5 <./images/tutorial6.png>]
-<images/seleccion1-1.png, id=44, 196.48407pt x 140.77594pt>
+[6 <./images/tutorial6.png>]
+<images/seleccion1-1.png, id=48, 196.48407pt x 140.77594pt>
 File: images/seleccion1-1.png Graphic file (type png)
 <use images/seleccion1-1.png>
-Package pdftex.def Info: images/seleccion1-1.png  used on input line 200.
+Package pdftex.def Info: images/seleccion1-1.png  used on input line 225.
 (pdftex.def)             Requested size: 187.89914pt x 134.63425pt.
-<images/seleccion1-2.png, id=45, 212.29312pt x 143.03438pt>
+<images/seleccion1-2.png, id=49, 212.29312pt x 143.03438pt>
 File: images/seleccion1-2.png Graphic file (type png)
 <use images/seleccion1-2.png>
-Package pdftex.def Info: images/seleccion1-2.png  used on input line 208.
+Package pdftex.def Info: images/seleccion1-2.png  used on input line 233.
 (pdftex.def)             Requested size: 187.89914pt x 126.60394pt.
- [6 <./images/tipo1.png> <./images/seleccion1-1.png>]
-<images/tabla1.png, id=52, 341.77687pt x 461.47406pt>
+ [7 <./images/tipo1.png> <./images/seleccion1-1.png>]
+<images/tabla1.png, id=55, 341.77687pt x 461.47406pt>
 File: images/tabla1.png Graphic file (type png)
 <use images/tabla1.png>
-Package pdftex.def Info: images/tabla1.png  used on input line 216.
+Package pdftex.def Info: images/tabla1.png  used on input line 241.
 (pdftex.def)             Requested size: 234.8775pt x 317.14291pt.
  (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2020/03/24 1.8d listings language file
 )
 LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 2
-22.
+47.
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 2022/07/10 v2.5l Standard LaTeX font definitions
-) [7 <./images/seleccion1-2.png> <./images/tabla1.png>]
-<images/consulta1.png, id=60, 231.11343pt x 320.69812pt>
+) [8 <./images/seleccion1-2.png> <./images/tabla1.png>]
+<images/consulta1.png, id=63, 231.11343pt x 320.69812pt>
 File: images/consulta1.png Graphic file (type png)
 <use images/consulta1.png>
-Package pdftex.def Info: images/consulta1.png  used on input line 240.
+Package pdftex.def Info: images/consulta1.png  used on input line 265.
 (pdftex.def)             Requested size: 164.41711pt x 228.14745pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 248--250
+Underfull \hbox (badness 10000) in paragraph at lines 273--275
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 251--253
+Underfull \hbox (badness 10000) in paragraph at lines 276--278
 
  []
 
-<images/tipo2.png, id=61, 230.36063pt x 362.10281pt>
+<images/tipo2.png, id=64, 230.36063pt x 362.10281pt>
 File: images/tipo2.png Graphic file (type png)
 <use images/tipo2.png>
-Package pdftex.def Info: images/tipo2.png  used on input line 256.
+Package pdftex.def Info: images/tipo2.png  used on input line 281.
 (pdftex.def)             Requested size: 164.41711pt x 258.44295pt.
-[8 <./images/consulta1.png>]
-<images/seleccion2.png, id=66, 193.47281pt x 296.60812pt>
+[9 <./images/consulta1.png>]
+<images/seleccion2.png, id=69, 193.47281pt x 296.60812pt>
 File: images/seleccion2.png Graphic file (type png)
 <use images/seleccion2.png>
-Package pdftex.def Info: images/seleccion2.png  used on input line 264.
+Package pdftex.def Info: images/seleccion2.png  used on input line 289.
 (pdftex.def)             Requested size: 187.89914pt x 288.06706pt.
- [9 <./images/tipo2.png>]
-<images/tabla2.png, id=71, 470.50781pt x 218.31563pt>
+ [10 <./images/tipo2.png>]
+<images/tabla2.png, id=74, 470.50781pt x 218.31563pt>
 File: images/tabla2.png Graphic file (type png)
 <use images/tabla2.png>
-Package pdftex.def Info: images/tabla2.png  used on input line 273.
+Package pdftex.def Info: images/tabla2.png  used on input line 298.
 (pdftex.def)             Requested size: 328.82707pt x 152.5767pt.
- [10 <./images/seleccion2.png> <./images/tabla2.png>]
+ [11 <./images/seleccion2.png> <./images/tabla2.png>]
 File: images/consulta1.png Graphic file (type png)
 <use images/consulta1.png>
-Package pdftex.def Info: images/consulta1.png  used on input line 301.
+Package pdftex.def Info: images/consulta1.png  used on input line 326.
 (pdftex.def)             Requested size: 164.41711pt x 228.14745pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 308--310
+Underfull \hbox (badness 10000) in paragraph at lines 333--335
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 311--313
+Underfull \hbox (badness 10000) in paragraph at lines 336--338
 
  []
 
-<images/tipo3.png, id=77, 332.74312pt x 356.83313pt>
+<images/tipo3.png, id=80, 332.74312pt x 356.83313pt>
 File: images/tipo3.png Graphic file (type png)
 <use images/tipo3.png>
-Package pdftex.def Info: images/tipo3.png  used on input line 316.
+Package pdftex.def Info: images/tipo3.png  used on input line 341.
 (pdftex.def)             Requested size: 164.41711pt x 176.31985pt.
-[11]
-<images/seleccion3.png, id=81, 191.9672pt x 353.06906pt>
+[12]
+<images/seleccion3.png, id=85, 191.9672pt x 353.06906pt>
 File: images/seleccion3.png Graphic file (type png)
 <use images/seleccion3.png>
-Package pdftex.def Info: images/seleccion3.png  used on input line 324.
+Package pdftex.def Info: images/seleccion3.png  used on input line 349.
 (pdftex.def)             Requested size: 164.41711pt x 302.41591pt.
-<images/tabla3.png, id=82, 478.78876pt x 242.40562pt>
+<images/tabla3.png, id=86, 478.78876pt x 242.40562pt>
 File: images/tabla3.png Graphic file (type png)
 <use images/tabla3.png>
-Package pdftex.def Info: images/tabla3.png  used on input line 333.
+Package pdftex.def Info: images/tabla3.png  used on input line 358.
 (pdftex.def)             Requested size: 328.82707pt x 166.48329pt.
- [12 <./images/tipo3.png> <./images/seleccion3.png>]
+ [13 <./images/tipo3.png> <./images/seleccion3.png>]
 File: images/consulta1.png Graphic file (type png)
 <use images/consulta1.png>
-Package pdftex.def Info: images/consulta1.png  used on input line 357.
+Package pdftex.def Info: images/consulta1.png  used on input line 382.
 (pdftex.def)             Requested size: 164.41711pt x 228.14745pt.
- [13 <./images/tabla3.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 364--366
+ [14 <./images/tabla3.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 389--391
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 367--369
+Underfull \hbox (badness 10000) in paragraph at lines 392--394
 
  []
 
-<images/tipo4.png, id=93, 265.74281pt x 350.05782pt>
+<images/tipo4.png, id=96, 265.74281pt x 350.05782pt>
 File: images/tipo4.png Graphic file (type png)
 <use images/tipo4.png>
-Package pdftex.def Info: images/tipo4.png  used on input line 372.
+Package pdftex.def Info: images/tipo4.png  used on input line 397.
 (pdftex.def)             Requested size: 164.41711pt x 216.58492pt.
-<images/seleccion4.png, id=94, 196.48407pt x 411.78844pt>
+<images/seleccion4.png, id=97, 196.48407pt x 411.78844pt>
 File: images/seleccion4.png Graphic file (type png)
 <use images/seleccion4.png>
-Package pdftex.def Info: images/seleccion4.png  used on input line 380.
+Package pdftex.def Info: images/seleccion4.png  used on input line 405.
 (pdftex.def)             Requested size: 164.41711pt x 344.60553pt.
-[14 <./images/tipo4.png>]
-<images/tabla4.png, id=99, 517.935pt x 307.1475pt>
+[15 <./images/tipo4.png>]
+<images/tabla4.png, id=102, 517.935pt x 307.1475pt>
 File: images/tabla4.png Graphic file (type png)
 <use images/tabla4.png>
-Package pdftex.def Info: images/tabla4.png  used on input line 389.
+Package pdftex.def Info: images/tabla4.png  used on input line 414.
 (pdftex.def)             Requested size: 328.82707pt x 195.00836pt.
- [15 <./images/seleccion4.png>]
-<images/consulta4.png, id=104, 309.40594pt x 236.38312pt>
+ [16 <./images/seleccion4.png>]
+<images/consulta4.png, id=107, 309.40594pt x 236.38312pt>
 File: images/consulta4.png Graphic file (type png)
 <use images/consulta4.png>
-Package pdftex.def Info: images/consulta4.png  used on input line 413.
+Package pdftex.def Info: images/consulta4.png  used on input line 438.
 (pdftex.def)             Requested size: 211.38832pt x 161.50305pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 420--422
+Underfull \hbox (badness 10000) in paragraph at lines 445--447
 
  []
 
-[16 <./images/tabla4.png> <./images/consulta4.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 423--425
+[17 <./images/tabla4.png> <./images/consulta4.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 448--450
 
  []
 
-<images/tipo5.png, id=110, 316.18124pt x 347.04657pt>
+<images/tipo5.png, id=113, 316.18124pt x 347.04657pt>
 File: images/tipo5.png Graphic file (type png)
 <use images/tipo5.png>
-Package pdftex.def Info: images/tipo5.png  used on input line 428.
+Package pdftex.def Info: images/tipo5.png  used on input line 453.
 (pdftex.def)             Requested size: 164.41711pt x 180.47054pt.
-<images/seleccion5-1.png, id=111, 191.21437pt x 135.50626pt>
+<images/seleccion5-1.png, id=114, 191.21437pt x 135.50626pt>
 File: images/seleccion5-1.png Graphic file (type png)
 <use images/seleccion5-1.png>
-Package pdftex.def Info: images/seleccion5-1.png  used on input line 436.
+Package pdftex.def Info: images/seleccion5-1.png  used on input line 461.
 (pdftex.def)             Requested size: 187.89914pt x 133.16324pt.
-<images/seleccion5-2.png, id=112, 200.24812pt x 298.86656pt>
+<images/seleccion5-2.png, id=115, 200.24812pt x 298.86656pt>
 File: images/seleccion5-2.png Graphic file (type png)
 <use images/seleccion5-2.png>
-Package pdftex.def Info: images/seleccion5-2.png  used on input line 444.
+Package pdftex.def Info: images/seleccion5-2.png  used on input line 469.
 (pdftex.def)             Requested size: 164.41711pt x 245.40506pt.
-[17 <./images/tipo5.png> <./images/seleccion5-1.png>]
-<images/tabla5.png, id=118, 636.12656pt x 298.11375pt>
+[18 <./images/tipo5.png> <./images/seleccion5-1.png>]
+<images/tabla5.png, id=122, 636.12656pt x 298.11375pt>
 File: images/tabla5.png Graphic file (type png)
 <use images/tabla5.png>
-Package pdftex.def Info: images/tabla5.png  used on input line 452.
+Package pdftex.def Info: images/tabla5.png  used on input line 477.
 (pdftex.def)             Requested size: 328.82707pt x 154.10117pt.
- [18 <./images/seleccion5-2.png> <./images/tabla5.png>]
-<images/consulta5.png, id=125, 639.89063pt x 330.48468pt>
+ [19 <./images/seleccion5-2.png> <./images/tabla5.png>]
+<images/consulta5.png, id=128, 639.89063pt x 330.48468pt>
 File: images/consulta5.png Graphic file (type png)
 <use images/consulta5.png>
-Package pdftex.def Info: images/consulta5.png  used on input line 476.
+Package pdftex.def Info: images/consulta5.png  used on input line 501.
 (pdftex.def)             Requested size: 305.33789pt x 157.69792pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 483--485
+Underfull \hbox (badness 10000) in paragraph at lines 508--510
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 486--488
+Underfull \hbox (badness 10000) in paragraph at lines 511--513
 
  []
 
-<images/tipo6.png, id=126, 204.765pt x 346.29375pt>
+<images/tipo6.png, id=129, 204.765pt x 346.29375pt>
 File: images/tipo6.png Graphic file (type png)
 <use images/tipo6.png>
-Package pdftex.def Info: images/tipo6.png  used on input line 491.
+Package pdftex.def Info: images/tipo6.png  used on input line 516.
 (pdftex.def)             Requested size: 164.41711pt x 278.07631pt.
-[19 <./images/consulta5.png>]
-<images/seleccion6-1.png, id=131, 194.22563pt x 138.5175pt>
+[20 <./images/consulta5.png>]
+<images/seleccion6-1.png, id=134, 194.22563pt x 138.5175pt>
 File: images/seleccion6-1.png Graphic file (type png)
 <use images/seleccion6-1.png>
-Package pdftex.def Info: images/seleccion6-1.png  used on input line 499.
+Package pdftex.def Info: images/seleccion6-1.png  used on input line 524.
 (pdftex.def)             Requested size: 187.89914pt x 134.00882pt.
-<images/seleccion6-2.png, id=132, 191.9672pt x 459.21562pt>
+<images/seleccion6-2.png, id=135, 191.9672pt x 459.21562pt>
 File: images/seleccion6-2.png Graphic file (type png)
 <use images/seleccion6-2.png>
-Package pdftex.def Info: images/seleccion6-2.png  used on input line 507.
+Package pdftex.def Info: images/seleccion6-2.png  used on input line 532.
 (pdftex.def)             Requested size: 164.41711pt x 393.33414pt.
- [20 <./images/tipo6.png> <./images/seleccion6-1.png>]
-<images/tabla6.png, id=138, 269.50688pt x 374.90062pt>
+ [21 <./images/tipo6.png> <./images/seleccion6-1.png>]
+<images/tabla6.png, id=141, 269.50688pt x 374.90062pt>
 File: images/tabla6.png Graphic file (type png)
 <use images/tabla6.png>
-Package pdftex.def Info: images/tabla6.png  used on input line 515.
+Package pdftex.def Info: images/tabla6.png  used on input line 540.
 (pdftex.def)             Requested size: 234.8775pt x 326.73296pt.
- [21 <./images/seleccion6-2.png>]
-<images/consulta6.png, id=143, 296.60812pt x 322.95656pt>
+ [22 <./images/seleccion6-2.png>]
+<images/consulta6.png, id=146, 296.60812pt x 322.95656pt>
 File: images/consulta6.png Graphic file (type png)
 <use images/consulta6.png>
-Package pdftex.def Info: images/consulta6.png  used on input line 542.
+Package pdftex.def Info: images/consulta6.png  used on input line 567.
 (pdftex.def)             Requested size: 187.89914pt x 204.59712pt.
- [22 <./images/tabla6.png>] [23 <./images/consulta6.png>] (./main.bbl) [24] (./
+ [23 <./images/tabla6.png>] [24 <./images/consulta6.png>] (./main.bbl) [25] (./
 main.aux
 LaTeX Info: Redefining \. on input line 8.
 LaTeX Info: Redefining \% on input line 8.
@@ -525,13 +524,13 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 5956 strings out of 476091
- 89888 string characters out of 5794081
+ 5964 strings out of 476091
+ 89992 string characters out of 5794081
  1895330 words of memory out of 5000000
- 26261 multiletter control sequences out of 15000+600000
+ 26269 multiletter control sequences out of 15000+600000
  522841 words of font info for 47 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 57i,6n,62p,411b,1950s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 57i,6n,62p,629b,1950s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-t1.enc}</usr/share/texmf/
 fonts/type1/public/cm-super/sfbx1000.pfb></usr/share/texmf/fonts/type1/public/c
 m-super/sfbx1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1440.pfb
@@ -541,10 +540,10 @@ onts/type1/public/cm-super/sfbx2488.pfb></usr/share/texmf/fonts/type1/public/cm
 </usr/share/texmf/fonts/type1/public/cm-super/sfrm1200.pfb></usr/share/texmf/fo
 nts/type1/public/cm-super/sfti1200.pfb></usr/share/texmf/fonts/type1/public/cm-
 super/sftt0900.pfb></usr/share/texmf/fonts/type1/public/cm-super/sftt1000.pfb>
-Output written on main.pdf (25 pages, 2779148 bytes).
+Output written on main.pdf (26 pages, 2786890 bytes).
 PDF statistics:
- 205 PDF objects out of 1000 (max. 8388607)
- 92 compressed objects within 1 object stream
+ 208 PDF objects out of 1000 (max. 8388607)
+ 94 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  161 words of extra memory for PDF output out of 10000 (max. 10000000)
 

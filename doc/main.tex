@@ -87,80 +87,105 @@
 \section{Introducción}
 \label{sec:introduccion}
 
+El análisis de datos en el ámbito de la salud desempeña un papel fundamental en la toma de decisiones y la optimización de recursos. En particular, las Unidades de Cuidados Intensivos (UCI) manejan grandes volúmenes de información clínica que, si se analiza adecuadamente, puede proporcionar información clave sobre el desempeño de los tratamientos, la administración de recursos y la atención al paciente. En este contexto, los sistemas de análisis multidimensional, como los cubos OLAP, ofrecen una manera eficaz de estructurar y explorar estos datos para obtener información valiosa.
+\\
+
+El presente trabajo consiste en el desarrollo de un informe interactivo basado en Power BI, utilizando como fuente de datos el almacén de datos desarrollado previamente para el proyecto denominado "\textbf{Cubo UCI}". Este cubo multidimensional contiene información sobre las Unidades de Cuidados Intensivos (UCI), incluyendo datos relacionados con tratamientos, volumen de fluido suministrado, cantidad administrada y otros aspectos relevantes para su análisis.
+
+
+
+
 
 
 
 \section{Objetivos}
 \label{sec:objetivos}
 
+El objetivo principal de este informe es proporcionar una visualización comprensible y efectiva de los datos, permitiendo analizar información clave mediante gráficos, tablas y otros elementos visuales. Para ello, se ha utilizado Power BI como herramienta de desarrollo, aprovechando su capacidad de conexión con modelos multidimensionales y consultas MDX para extraer y validar los datos necesarios. Cada elemento visual del informe está respaldado por una consulta MDX que asegura la correspondencia entre los datos del cubo y la información presentada.
+\\
 
+Este objetivo se puede separar en los siguientes más específicos:
 
 \begin{itemize}
-aaakakañ
-ajaaa
+	\item Desarrollar un informe interactivo utilizando Power BI que permita analizar los datos del proyecto Cubo UCI.
+	\item Implementar gráficos, tablas y elementos visuales que representen correctamente la información contenida en el almacén de datos, facilitando la comprensión de los datos por parte del usuario final.
+	\item Validar los datos presentados en el informe mediante consultas MDX, asegurando que los resultados coincidan con los valores obtenidos directamente del cubo multidimensional.
+	\item Aplicar un diseño visual claro y profesional para que el informe cumpla con los estándares de visualización de datos.
+	\item Documentar el proceso de desarrollo del informe, incluyendo capturas, explicaciones de los elementos visuales y el código MDX utilizado en cada caso.
 \end{itemize}
 
 
 
-
-
-
-
-
-
-
 \section{Creación del proyecto en Power BI}
- explicar ... subo fotos y hay que explicar pasos 
- 
-\subsection{Pasos Iniciales}
------ cambiar pies de fotos
+Para comenzar con la creación del proyecto, será necesario iniciar la aplicación Power BI Desktop. Al hacerlo, se mostrará una pantalla inicial similar a la que se observa en la Figura \ref{fig:tutorial1}.
 
 \begin{figure}[H]
 	\begin{center} 
-		\includegraphics[width=\textwidth]{images/tutorial1.png}
-		\caption{Creación de un nuevo proyecto multidimensional en Visual Studio.}
+		\includegraphics[width=0.9\textwidth]{images/tutorial1.png}
+		\caption{Pantalla de inicio de PowerBI Desktop}
 		\label{fig:tutorial1}
 	\end{center}
 \end{figure}
 
+Para extraer los datos de nuestro Cubo, seleccionamos la pestaña \textbf{Obtener datos} en el panel de \textbf{Inicio}. A continuación, elegimos como origen de datos \textbf{Analysis Services}.  
 
 
 \begin{figure}[H]
 	\begin{center} 
-		\includegraphics[width=\textwidth]{images/tutorial2.png}
-		\caption{Creación de un nuevo proyecto multidimensional en Visual Studio.}
+		\includegraphics[width=0.9\textwidth]{images/tutorial2.png}
+		\caption{Selección de origen de datos en PowerBI}
 		\label{fig:tutorial2}
 	\end{center}
 \end{figure}
 
+Una vez seleccionada la opción \textbf{Analysis Services}, se mostrará una ventana como la que se observa en la Figura \ref{fig:tutorial3}. En esta pantalla, será necesario completar los campos de \textbf{Servidor} y \textbf{Base de datos}. El campo \textbf{Servidor} debe contener el nombre del servidor configurado en \textbf{SQL Server Management Studio (SSMS)}, mientras que el campo \textbf{Base de datos} deberá especificar la base de datos correspondiente que se utilizará para el proyecto.  
+
+
 \begin{figure}[H]
 	\begin{center} 
-		\includegraphics[width=\textwidth]{images/tutorial3.png}
-		\caption{Creación de un nuevo proyecto multidimensional en Visual Studio.}
+		\includegraphics[width=0.9\textwidth]{images/tutorial3.png}
+		\caption{Conexión a la base de datos de SSMS desde PowerBI}
 		\label{fig:tutorial3}
 	\end{center}
 \end{figure}
 
+
 \begin{figure}[H]
 	\begin{center} 
-		\includegraphics[width=\textwidth]{images/tutorial4.png}
-		\caption{Creación de un nuevo proyecto multidimensional en Visual Studio.}
+		\includegraphics[width=0.9\textwidth]{images/tutorial4.png}
+		\caption{Elección de la base de datos para la conexión}
 		\label{fig:tutorial4}
 	\end{center}
 \end{figure}
 
+Si la base de datos se ha importado correctamente, se mostrará una pantalla similar a la que se observa en la Figura \ref{fig:tutorial5}. En esta vista, se puede apreciar un \textbf{panel de datos} ubicado en el lado derecho de la pantalla, donde se listan las tablas correspondientes a nuestro cubo.  
+
+
 \begin{figure}[H]
 	\begin{center} 
-		\includegraphics[width=\textwidth]{images/tutorial5.png}
+		\includegraphics[width=0.9\textwidth]{images/tutorial5.png}
 		\caption{Creación de un nuevo proyecto multidimensional en Visual Studio.}
 		\label{fig:tutorial5}
 	\end{center}
 \end{figure}
 
+
+\subsection{Pasos adicionales}
+
+Para mejorar el aspecto visual del proyecto, es posible personalizar tanto las tablas como el diseño general. Para ello, accedemos a la pestaña \textbf{Ver}, donde se mostrarán varios diseños predefinidos (Figura \ref*{fig:tutorial6}).  
+
+Si pulsamos la opción \textbf{Ampliación}, además de visualizar más diseños, se habilitan varias opciones adicionales:  
+\begin{itemize}  
+	\item \textbf{Explorar temas}: Permite cargar un tema personalizado desde el ordenador.  
+	\item \textbf{Galería de temas}: Da acceso a una colección de plantillas prediseñadas.  
+	\item \textbf{Personalizar tema}: Ofrece la posibilidad de ajustar el tema actual según las preferencias del usuario.  
+\end{itemize}  
+
+
 \begin{figure}[H]
 	\begin{center} 
-		\includegraphics[width=\textwidth]{images/tutorial6.png}
-		\caption{Creación de un nuevo proyecto multidimensional en Visual Studio.}
+		\includegraphics[width=0.9\textwidth]{images/tutorial6.png}
+		\caption{Cambio de diseño del proyecto en PowerBI}
 		\label{fig:tutorial6}
 	\end{center}
 \end{figure}
