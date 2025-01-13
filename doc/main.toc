@@ -1,0 +1,15 @@
+\babel@toc {spanish}{}\relax 
+\contentsline {section}{\numberline {1}Introducción}{2}{}%
+\contentsline {section}{\numberline {2}Objetivos}{2}{}%
+\contentsline {section}{\numberline {3}Creación del proyecto en Power BI}{2}{}%
+\contentsline {subsection}{\numberline {3.1}Pasos Iniciales}{2}{}%
+\contentsline {section}{\numberline {4}Graficas}{5}{}%
+\contentsline {subsection}{\numberline {4.1}Gráfica 1 titulos y tal ponerlos}{5}{}%
+\contentsline {subsection}{\numberline {4.2}Gráfica 2}{8}{}%
+\contentsline {subsection}{\numberline {4.3}Gráfica 3}{11}{}%
+\contentsline {subsection}{\numberline {4.4}Gráfica 4}{14}{}%
+\contentsline {subsection}{\numberline {4.5}Gráfica 5}{17}{}%
+\contentsline {subsection}{\numberline {4.6}Gráfica 6}{19}{}%
+\contentsline {section}{\numberline {5}Tutorial ejecutar consultas}{23}{}%
+\contentsline {section}{\numberline {6}Conclusión}{23}{}%
+\contentsline {section}{\numberline {7}Acceso al Repositorio}{24}{}%
